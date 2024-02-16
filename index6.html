@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            border: 2px solid #d08ec2;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Assignment 06</p>
+    <p>Create a DOM Project Incorporating Learned Concepts:</p>
+
+    <ul id="listItem">
+        <li>item 01</li>
+        <li>item 02</li>
+    </ul>
+    <input type="text" id="itemNameInput" placeholder="Add Item">
+    <br><br>
+    <button id="itemBtn">Add Items</button>
+
+    <script>
+        // You have an HTML document containing a list of items. Your task is to create a function called addItemToList that dynamically adds a new item to the list based on user input. The new item should be inserted before a specified reference item if provided, otherwise, it should be appended to the end of the list. Use querySelector to select the list element, append to add the new item at the end of the list, and insertBefore to insert it before the reference item.
+        function addItemToList(itemName) {
+            var ulItemList = document.querySelector("#listItem");
+            var li = document.createElement("li");
+            li.textContent = itemName;
+            ulItemList.append(li)
+        }
+
+        itemBtn.addEventListener('click', function () {
+            var itemNameInput = document.getElementById('itemNameInput');
+
+            // ".value" This property retrieves the current value of the input field, which is the text entered by the user.
+            // "".trim()" This method removes any leading and trailing whitespace characters
+            
+            var itemName = itemNameInput.value.trim();
+            if (itemName) {
+                addItemToList(itemName);
+
+                // By setting the value of the input field to an empty string, the line effectively clears any text entered by the user, ensuring that the input field is ready for the user to enter a new item name or input. 
+                itemNameInput.value = ''; 
+            } else {
+                alert('Please enter a valid item name.');
+            }
+        });
+    </script>
+</body>
+
+</html>

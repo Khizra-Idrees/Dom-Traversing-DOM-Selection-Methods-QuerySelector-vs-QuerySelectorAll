@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parentDiv {
+            height: 300px;
+            width: 300px;
+            text-align: center;
+            padding: 16px;
+            margin: 16px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Assignment 05</p>
+    <p>Difference Between insertAdjacentHTML, insertAdjacentText, and insertAdjacentElement:</p>
+
+    <p>Adding more elements</p>
+    <div id="parentDiv">
+        <div>Item 01</div>
+        <div>Item 02</div>
+        <div>Item 03</div>
+        <div>Item 04</div>
+    </div>
+    <script>
+        // Clarify the differences between `insertAdjacentHTML`, `insertAdjacentText`, and `insertAdjacentElement` with examples.
+
+        var parent = document.querySelector("#parentDiv");
+        parent.insertAdjacentHTML("beforebegin", "<p>Hello World!  (insertAdjacentHTML add element in given string)</p>");
+
+        var newElement = document.createElement("h5");
+        newElement.innerText = "heading 05 (insertAdjacentElement makes a new element to add a text)";
+        parent.insertAdjacentElement("afterbegin" , newElement);
+
+        parent.insertAdjacentText("afterend" , "it's END (insertAdjacentText a given text into the element at a specified position relative to the element)");
+    </script>
+</body>
+
+</html>

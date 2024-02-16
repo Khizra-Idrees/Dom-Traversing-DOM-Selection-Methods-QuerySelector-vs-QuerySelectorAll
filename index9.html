@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 8px;
+            width: 175px;
+            height: 118px;
+            background-color: rgb(91 122 137 / 92%);
+            text-align: center;
+            padding: 2px;
+            border: 1px solid rgb(83 53 42);
+        }
+    </style>
+</head>
+
+<body>
+    <p>Assignment 09</p>
+    <p>Difference Between querySelector and querySelectorAll:</p>
+    <p>1: querySelector</p>
+    <p>querySelector give us the first element and the changes is just happen in first element or first class</p>
+    <div>Box 01</div>
+    <p>2: querySelectorAll</p>
+    <p>querySelectorAll give us the a collection of HTML element and the changes is happen in all elements or all class</p>
+    <div class="myDiv">Box 02</div>
+    <div class="myDiv">Box 03</div>
+    <div class="myDiv">Box 04</div>
+    <script>
+        
+        //  - Explain the distinction between `querySelector` and `querySelectorAll` with examples.
+
+        // querySelector
+        
+        var box = document.querySelector("div");
+        box.textContent = "querySelector box 1"
+
+        document.write("<br>");
+        document.write("<br>");
+
+        // querySelectorAll
+        
+        var boxs = document.querySelectorAll(".myDiv");
+        boxs.forEach(function (box, index) {
+            box.textContent = "querySelectorAll box " + (index + 2);
+        });
+    </script>
+</body>
+
+</html>
